@@ -7,7 +7,7 @@ namespace SocialMediaAnalytics
 {
     public partial class fetchSocailMediaData : Form
     {
-        public string dir = "C:\\Users\\vignesh.venugopal\\Documents\\GitHub\\socialMediaMarketing\\fetchData\\";
+        public string dir = Directory.GetCurrentDirectory() + "\\fetchData\\";
 
         public fetchSocailMediaData()
         {
