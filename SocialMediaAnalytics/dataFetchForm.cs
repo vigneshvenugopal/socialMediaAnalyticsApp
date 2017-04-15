@@ -7,7 +7,7 @@ namespace SocialMediaAnalytics
 {
     public partial class fetchSocailMediaData : Form
     {
-        public string dir = "C:\\Users\\vignesh.venugopal\\Documents\\GitHub\\socialMediaMarketing\\fetchData\\";
+        public string dir = Directory.GetCurrentDirectory() + "\\fetchData\\";
 
         public fetchSocailMediaData()
         {
@@ -45,6 +45,10 @@ namespace SocialMediaAnalytics
             csv.AppendLine(line_11);
             var line_12 = string.Format("{0},{1}", "Video ID", youtubeVideoID.Text == null ? "0" : youtubeVideoID.Text);
             csv.AppendLine(line_12);
+            var line_13 = string.Format("{0},{1}", "Facebook API Key", "477873422398335|2b9be6bc09b2c6544bb827342ee93e8d");
+            csv.AppendLine(line_13);
+            var line_14 = string.Format("{0},{1}", "YouTube API Key", "AIzaSyA5lmEsMapTfMu0l2TDS_o6n3WzTYnqUDE");
+            csv.AppendLine(line_14);
 
             File.WriteAllText(fileLocation, csv.ToString());
         }
