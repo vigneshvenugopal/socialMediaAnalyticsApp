@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(fetchSocailMediaData));
             this.adName = new System.Windows.Forms.TextBox();
             this.adNameLabel = new System.Windows.Forms.Label();
             this.facebookGroup = new System.Windows.Forms.GroupBox();
@@ -40,6 +41,8 @@
             this.postDateLabel = new System.Windows.Forms.Label();
             this.adReleaseDate = new System.Windows.Forms.DateTimePicker();
             this.twitterGroup = new System.Windows.Forms.GroupBox();
+            this.twitterNumberofTweetsLabel = new System.Windows.Forms.Label();
+            this.twitterNumberofTweets = new System.Windows.Forms.TextBox();
             this.twitterHandleLabel = new System.Windows.Forms.Label();
             this.twitterOfficialHandle = new System.Windows.Forms.TextBox();
             this.twitterHashTagLabel = new System.Windows.Forms.Label();
@@ -48,8 +51,6 @@
             this.videoIDLabel = new System.Windows.Forms.Label();
             this.youtubeVideoID = new System.Windows.Forms.TextBox();
             this.fetchDate = new System.Windows.Forms.Button();
-            this.twitterNumberofTweetsLabel = new System.Windows.Forms.Label();
-            this.twitterNumberofTweets = new System.Windows.Forms.TextBox();
             this.facebookApiKey = new System.Windows.Forms.TextBox();
             this.facebookApiKeyLabel = new System.Windows.Forms.Label();
             this.youtubeApiKeyLabel = new System.Windows.Forms.Label();
@@ -203,6 +204,29 @@
             this.twitterGroup.TabStop = false;
             this.twitterGroup.Text = "Twitter";
             // 
+            // twitterNumberofTweetsLabel
+            // 
+            this.twitterNumberofTweetsLabel.AutoSize = true;
+            this.twitterNumberofTweetsLabel.Font = new System.Drawing.Font("Candara", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.twitterNumberofTweetsLabel.Location = new System.Drawing.Point(7, 137);
+            this.twitterNumberofTweetsLabel.Name = "twitterNumberofTweetsLabel";
+            this.twitterNumberofTweetsLabel.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.twitterNumberofTweetsLabel.Size = new System.Drawing.Size(106, 18);
+            this.twitterNumberofTweetsLabel.TabIndex = 7;
+            this.twitterNumberofTweetsLabel.Text = "Num. of Tweets";
+            // 
+            // twitterNumberofTweets
+            // 
+            this.twitterNumberofTweets.BackColor = System.Drawing.SystemColors.Window;
+            this.twitterNumberofTweets.Font = new System.Drawing.Font("Candara", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.twitterNumberofTweets.ForeColor = System.Drawing.SystemColors.WindowFrame;
+            this.twitterNumberofTweets.Location = new System.Drawing.Point(122, 134);
+            this.twitterNumberofTweets.MaxLength = 4;
+            this.twitterNumberofTweets.Name = "twitterNumberofTweets";
+            this.twitterNumberofTweets.Size = new System.Drawing.Size(151, 26);
+            this.twitterNumberofTweets.TabIndex = 6;
+            this.twitterNumberofTweets.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
             // twitterHandleLabel
             // 
             this.twitterHandleLabel.AutoSize = true;
@@ -283,37 +307,15 @@
             // 
             // fetchDate
             // 
+            this.fetchDate.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.fetchDate.Font = new System.Drawing.Font("Cambria", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.fetchDate.Location = new System.Drawing.Point(463, 304);
             this.fetchDate.Name = "fetchDate";
             this.fetchDate.Size = new System.Drawing.Size(95, 29);
             this.fetchDate.TabIndex = 12;
             this.fetchDate.Text = "Fetch Data";
-            this.fetchDate.UseVisualStyleBackColor = true;
+            this.fetchDate.UseVisualStyleBackColor = false;
             this.fetchDate.Click += new System.EventHandler(this.fetchDate_Click);
-            // 
-            // twitterNumberofTweetsLabel
-            // 
-            this.twitterNumberofTweetsLabel.AutoSize = true;
-            this.twitterNumberofTweetsLabel.Font = new System.Drawing.Font("Candara", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.twitterNumberofTweetsLabel.Location = new System.Drawing.Point(7, 137);
-            this.twitterNumberofTweetsLabel.Name = "twitterNumberofTweetsLabel";
-            this.twitterNumberofTweetsLabel.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.twitterNumberofTweetsLabel.Size = new System.Drawing.Size(106, 18);
-            this.twitterNumberofTweetsLabel.TabIndex = 7;
-            this.twitterNumberofTweetsLabel.Text = "Num. of Tweets";
-            // 
-            // twitterNumberofTweets
-            // 
-            this.twitterNumberofTweets.BackColor = System.Drawing.SystemColors.Window;
-            this.twitterNumberofTweets.Font = new System.Drawing.Font("Candara", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.twitterNumberofTweets.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.twitterNumberofTweets.Location = new System.Drawing.Point(122, 134);
-            this.twitterNumberofTweets.MaxLength = 4;
-            this.twitterNumberofTweets.Name = "twitterNumberofTweets";
-            this.twitterNumberofTweets.Size = new System.Drawing.Size(151, 26);
-            this.twitterNumberofTweets.TabIndex = 6;
-            this.twitterNumberofTweets.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // facebookApiKey
             // 
@@ -363,7 +365,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.Window;
+            this.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.ClientSize = new System.Drawing.Size(971, 347);
             this.Controls.Add(this.youtubeApiKeyLabel);
             this.Controls.Add(this.youtubeApiKey);
@@ -377,8 +379,10 @@
             this.Controls.Add(this.facebookGroup);
             this.Controls.Add(this.adNameLabel);
             this.Controls.Add(this.adName);
+            this.HelpButton = true;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "fetchSocailMediaData";
-            this.Text = "Fetch Socail Media Data";
+            this.Text = "Fetch Social Media Data";
             this.facebookGroup.ResumeLayout(false);
             this.facebookGroup.PerformLayout();
             this.twitterGroup.ResumeLayout(false);
